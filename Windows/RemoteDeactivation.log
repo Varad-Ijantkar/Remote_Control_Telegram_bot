@@ -1,0 +1,2187 @@
+2025-04-26 14:14:49,981 - INFO - Waiting 30 seconds for network availability...
+2025-04-26 14:15:19,982 - INFO - Loading .env.w11
+2025-04-26 14:15:19,982 - INFO - BOT_TOKEN: 7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to
+2025-04-26 14:15:19,982 - INFO - ALLOWED_USER_ID: 995298741
+2025-04-26 14:15:19,982 - INFO - DEVICE_NAME: W11
+2025-04-26 14:15:20,448 - INFO - \u2705 W11 Bot is running...
+2025-04-26 14:15:20,638 - ERROR - Network Retry Loop (Bootstrap Initialize Application): Failed run number 0 of 0. Aborting.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 93, in do_action
+    return await action_cb()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_application.py", line 486, in initialize
+    await self.bot.initialize()
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 308, in initialize
+    await super().initialize()
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 835, in initialize
+    await self.get_me()
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 1969, in get_me
+    return await super().get_me(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 967, in get_me
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: All connection attempts failed
+2025-04-26 14:15:20,648 - ERROR - Failed to start bot: httpx.ConnectError: All connection attempts failed
+2025-04-26 14:16:28,113 - INFO - Waiting 30 seconds for network availability...
+2025-04-26 14:16:58,117 - INFO - Loading .env.w11
+2025-04-26 14:16:58,123 - INFO - BOT_TOKEN: 7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to
+2025-04-26 14:16:58,123 - INFO - ALLOWED_USER_ID: 995298741
+2025-04-26 14:16:58,123 - INFO - DEVICE_NAME: W11
+2025-04-26 14:16:58,535 - INFO - \u2705 W11 Bot is running...
+2025-04-26 14:16:59,092 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getMe "HTTP/1.1 200 OK"
+2025-04-26 14:16:59,274 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/deleteWebhook "HTTP/1.1 200 OK"
+2025-04-26 14:16:59,274 - INFO - Application started
+2025-04-26 14:16:59,772 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:16:59,774 - INFO - \U0001f539 Nir0 (995298741) used /status
+2025-04-26 14:17:00,280 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:17:09,952 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:17:20,463 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:17:20,464 - INFO - \U0001f539 Nir0 (995298741) used /camera []
+2025-04-26 14:17:21,241 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:17:25,936 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendPhoto "HTTP/1.1 200 OK"
+2025-04-26 14:17:30,634 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:17:32,383 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:17:32,384 - INFO - \U0001f539 Nir0 (995298741) used /whoami []
+2025-04-26 14:17:33,149 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:17:37,196 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:17:37,196 - INFO - \U0001f539 Nir0 (995298741) used /screenshot []
+2025-04-26 14:17:37,196 - INFO - Attempting screenshot on W11...
+2025-04-26 14:17:37,197 - ERROR - Screenshot failed on W11: screen grab failed
+2025-04-26 14:17:37,581 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:17:37,582 - INFO - Temporary file C:\WINDOWS\TEMP\tmpvem95dda.png removed
+2025-04-26 14:17:47,358 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:17:52,761 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:17:52,762 - INFO - \U0001f539 Nir0 (995298741) used /screenshot []
+2025-04-26 14:17:52,762 - INFO - Attempting screenshot on W11...
+2025-04-26 14:17:52,762 - ERROR - Screenshot failed on W11: screen grab failed
+2025-04-26 14:17:53,580 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:17:53,581 - INFO - Temporary file C:\WINDOWS\TEMP\tmpcvoq2lru.png removed
+2025-04-26 14:18:02,924 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:18:13,190 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:18:23,354 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:18:33,559 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:18:34,714 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:18:34,715 - INFO - \U0001f539 Nir0 (995298741) used /screenshot []
+2025-04-26 14:18:34,715 - INFO - Attempting screenshot on W11...
+2025-04-26 14:18:34,716 - ERROR - Screenshot failed on W11: screen grab failed
+2025-04-26 14:18:35,407 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:18:35,408 - INFO - Temporary file C:\WINDOWS\TEMP\tmpvwspmaoz.png removed
+2025-04-26 14:18:45,033 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:18:55,201 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:19:05,803 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:19:16,032 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:19:16,652 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:19:16,652 - INFO - \U0001f539 Nir0 (995298741) used /lock []
+2025-04-26 14:19:18,367 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:19:26,903 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:19:37,110 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:19:47,602 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:19:57,959 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:20:08,121 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:20:18,374 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:20:28,534 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:20:38,700 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:20:49,119 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:20:59,279 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:21:09,441 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:21:19,602 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:21:29,765 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:21:39,937 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:21:50,097 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:22:00,261 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:22:09,732 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:22:09,732 - INFO - \U0001f539 Nir0 (995298741) used /lock []
+2025-04-26 14:22:10,434 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:22:17,227 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:22:17,227 - INFO - \U0001f539 Nir0 (995298741) used /screenshot []
+2025-04-26 14:22:17,227 - INFO - Attempting screenshot on W11...
+2025-04-26 14:22:17,228 - ERROR - Screenshot failed on W11: screen grab failed
+2025-04-26 14:22:17,903 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:22:17,904 - INFO - Temporary file C:\WINDOWS\TEMP\tmp_9dr0xhi.png removed
+2025-04-26 14:22:27,394 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:22:37,782 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:22:48,011 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:22:58,210 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:23:08,393 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:23:18,558 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:23:28,847 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:26:33,025 - INFO - Waiting 30 seconds for network availability...
+2025-04-26 14:27:03,026 - INFO - Loading .env.w11
+2025-04-26 14:27:03,038 - INFO - BOT_TOKEN: 7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to
+2025-04-26 14:27:03,038 - INFO - ALLOWED_USER_ID: 995298741
+2025-04-26 14:27:03,038 - INFO - DEVICE_NAME: W11
+2025-04-26 14:27:03,906 - INFO - \u2705 W11 Bot is running...
+2025-04-26 14:27:04,448 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getMe "HTTP/1.1 200 OK"
+2025-04-26 14:27:04,607 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/deleteWebhook "HTTP/1.1 200 OK"
+2025-04-26 14:27:04,609 - INFO - Application started
+2025-04-26 14:27:05,131 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:27:05,132 - INFO - \U0001f539 Nir0 (995298741) used /status
+2025-04-26 14:27:05,470 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:27:14,357 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:27:14,359 - INFO - \U0001f539 Nir0 (995298741) used /screenshot []
+2025-04-26 14:27:14,359 - INFO - Attempting screenshot on W11...
+2025-04-26 14:27:14,378 - ERROR - Screenshot failed on W11: screen grab failed
+2025-04-26 14:27:15,095 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:27:15,096 - INFO - Temporary file C:\Users\varad\AppData\Local\Temp\tmphptv03gc.png removed
+2025-04-26 14:27:24,562 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:27:34,766 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:27:44,983 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:27:55,175 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:28:05,363 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:28:15,645 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:28:25,838 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:28:36,004 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:28:46,325 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:28:56,607 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:29:06,789 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:29:16,960 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:29:27,131 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:29:37,333 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:29:47,587 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:29:57,859 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:30:08,068 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:30:18,284 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:30:28,471 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:30:38,636 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:30:48,847 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:30:59,016 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:31:09,212 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:31:19,459 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:31:29,634 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:31:39,801 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:31:49,967 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:32:00,223 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:32:10,391 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:32:20,703 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:32:30,872 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:32:41,184 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:32:51,350 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:33:01,526 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:33:11,693 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:33:21,860 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:33:32,027 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:33:42,214 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:33:52,381 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:34:02,562 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:34:12,845 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:34:23,165 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:34:33,345 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:34:43,654 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:34:53,822 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:35:04,135 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:35:14,304 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:35:24,614 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:35:34,782 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:35:44,999 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:35:55,184 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:36:05,405 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:36:15,571 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:36:25,838 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:36:36,058 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:36:46,316 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:36:56,545 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:37:06,713 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:37:16,878 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:37:27,044 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:37:37,209 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:37:47,379 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:37:57,599 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:38:07,765 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:38:17,939 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:38:28,103 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:38:38,398 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:38:48,705 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:38:58,875 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:39:09,046 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:39:19,325 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:39:29,507 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:39:39,745 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:39:49,974 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:40:00,168 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:40:10,384 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:40:20,549 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:40:30,715 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:40:40,881 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:40:51,056 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:41:01,225 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:41:11,508 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:41:21,691 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:41:31,861 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:41:42,026 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:41:52,265 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:42:02,434 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:42:12,616 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:42:22,782 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:42:33,056 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:42:43,224 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:42:53,442 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:43:03,629 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:43:13,868 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:43:24,067 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:43:34,281 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:43:44,496 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:43:55,523 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:44:06,339 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:44:16,520 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:44:26,672 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:44:36,961 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:44:47,116 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:44:57,287 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:45:07,478 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:45:17,722 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:45:27,912 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:45:38,068 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:45:48,230 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:45:58,384 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:46:08,544 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:46:18,701 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:46:28,854 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:46:39,005 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:46:49,262 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:46:59,417 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:47:09,576 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:47:19,724 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:47:29,919 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:47:40,070 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:47:50,282 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:48:00,487 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:48:10,637 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:48:20,797 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:48:30,952 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:48:41,104 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:48:51,267 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:50:45,261 - INFO - Waiting 30 seconds for network availability...
+2025-04-26 14:51:15,276 - INFO - Loading .env.w11
+2025-04-26 14:51:15,290 - INFO - BOT_TOKEN: 7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to
+2025-04-26 14:51:15,290 - INFO - ALLOWED_USER_ID: 995298741
+2025-04-26 14:51:15,290 - INFO - DEVICE_NAME: W11
+2025-04-26 14:51:15,940 - INFO - \u2705 W11 Bot is running...
+2025-04-26 14:51:17,655 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getMe "HTTP/1.1 200 OK"
+2025-04-26 14:51:17,850 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/deleteWebhook "HTTP/1.1 200 OK"
+2025-04-26 14:51:17,851 - INFO - Application started
+2025-04-26 14:51:19,117 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:51:19,119 - INFO - \U0001f539 Nir0 (995298741) used /status
+2025-04-26 14:51:19,516 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:51:27,849 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:51:27,850 - INFO - \U0001f539 Nir0 (995298741) used /screenshot []
+2025-04-26 14:51:27,850 - INFO - Attempting screenshot on W11...
+2025-04-26 14:51:27,856 - ERROR - Screenshot failed on W11: screen grab failed
+2025-04-26 14:51:28,509 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:51:28,510 - INFO - Temporary file C:\Users\varad\AppData\Local\Temp\tmp3f66bsfi.png removed
+2025-04-26 14:51:32,218 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:51:32,219 - INFO - \U0001f539 Nir0 (995298741) used /whoami []
+2025-04-26 14:51:32,607 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:51:42,385 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:51:47,020 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:51:47,020 - INFO - \U0001f539 Nir0 (995298741) used /say ['Great', 'Job', 'V']
+2025-04-26 14:51:47,021 - INFO - Initializing pyttsx3 for device W11 on Windows...
+2025-04-26 14:51:47,647 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\varad\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-04-26 14:51:47,647 - INFO - Using writeable comtypes cache directory: 'C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2025-04-26 14:51:48,260 - INFO - Saying message: Great Job V
+2025-04-26 14:51:49,204 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:51:58,685 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:52:08,851 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:52:19,125 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:52:29,288 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:52:39,603 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:52:49,765 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:52:53,225 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 14:52:53,226 - INFO - \U0001f539 Nir0 (995298741) used /shutdown []
+2025-04-26 14:52:54,332 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 14:53:03,382 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:03:31,614 - INFO - Waiting 30 seconds for network availability...
+2025-04-26 21:04:01,616 - INFO - Loading .env.w11
+2025-04-26 21:04:01,640 - INFO - BOT_TOKEN: 7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to
+2025-04-26 21:04:01,640 - INFO - ALLOWED_USER_ID: 995298741
+2025-04-26 21:04:01,640 - INFO - DEVICE_NAME: W11
+2025-04-26 21:04:02,850 - INFO - \u2705 W11 Bot is running...
+2025-04-26 21:04:03,514 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getMe "HTTP/1.1 200 OK"
+2025-04-26 21:04:03,821 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/deleteWebhook "HTTP/1.1 200 OK"
+2025-04-26 21:04:03,823 - INFO - Application started
+2025-04-26 21:04:04,757 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:04:04,760 - INFO - \U0001f539 Nir0 (995298741) used /shutdown []
+2025-04-26 21:04:05,165 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 21:04:05,249 - INFO - \U0001f539 Nir0 (995298741) used /status
+2025-04-26 21:04:05,765 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 21:04:05,767 - INFO - \U0001f539 Nir0 (995298741) used /status
+2025-04-26 21:04:06,175 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 21:04:06,179 - INFO - \U0001f539 Nir0 (995298741) used /status
+2025-04-26 21:04:06,523 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 21:09:30,354 - INFO - Waiting 30 seconds for network availability...
+2025-04-26 21:10:00,355 - INFO - Loading .env.w11
+2025-04-26 21:10:00,377 - INFO - BOT_TOKEN: 7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to
+2025-04-26 21:10:00,377 - INFO - ALLOWED_USER_ID: 995298741
+2025-04-26 21:10:00,377 - INFO - DEVICE_NAME: W11
+2025-04-26 21:10:01,513 - INFO - \u2705 W11 Bot is running...
+2025-04-26 21:10:02,189 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getMe "HTTP/1.1 200 OK"
+2025-04-26 21:10:02,394 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/deleteWebhook "HTTP/1.1 200 OK"
+2025-04-26 21:10:02,396 - INFO - Application started
+2025-04-26 21:10:03,316 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:10:03,319 - INFO - \U0001f539 Nir0 (995298741) used /status
+2025-04-26 21:10:03,725 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 21:10:13,558 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:10:22,984 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:10:22,985 - INFO - \U0001f539 Nir0 (995298741) used /lock []
+2025-04-26 21:10:24,002 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 21:10:33,214 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:10:39,974 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:10:39,976 - INFO - \U0001f539 Nir0 (995298741) used /status
+2025-04-26 21:10:40,793 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 21:10:44,275 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:10:44,277 - INFO - \U0001f539 Nir0 (995298741) used /screenshot []
+2025-04-26 21:10:44,277 - INFO - Attempting screenshot on W11...
+2025-04-26 21:10:44,283 - ERROR - Screenshot failed on W11: screen grab failed
+2025-04-26 21:10:44,787 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 21:10:44,790 - INFO - Temporary file C:\Users\varad\AppData\Local\Temp\tmpmlfm_4b4.png removed
+2025-04-26 21:10:54,515 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:11:01,786 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:11:01,789 - INFO - \U0001f539 Nir0 (995298741) used /restart []
+2025-04-26 21:11:02,604 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 21:11:12,257 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:30:37,519 - INFO - Waiting 30 seconds for network and desktop availability...
+2025-04-26 21:31:03,224 - INFO - Waiting 30 seconds for network and desktop availability...
+2025-04-26 21:31:33,225 - INFO - Loading .env.w11
+2025-04-26 21:31:33,226 - INFO - BOT_TOKEN: 7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to
+2025-04-26 21:31:33,227 - INFO - ALLOWED_USER_ID: 995298741
+2025-04-26 21:31:33,227 - INFO - DEVICE_NAME: W11
+2025-04-26 21:31:34,063 - INFO - \u2705 W11 Bot is running...
+2025-04-26 21:31:34,685 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getMe "HTTP/1.1 200 OK"
+2025-04-26 21:31:34,896 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/deleteWebhook "HTTP/1.1 200 OK"
+2025-04-26 21:31:34,899 - INFO - Application started
+2025-04-26 21:31:35,516 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:31:35,517 - INFO - \U0001f539 Nir0 (995298741) used /status
+2025-04-26 21:31:36,030 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 21:31:56,903 - INFO - Waiting 30 seconds for network and desktop availability...
+2025-04-26 21:32:26,905 - INFO - Loading .env.w11
+2025-04-26 21:32:26,908 - INFO - BOT_TOKEN: 7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to
+2025-04-26 21:32:26,908 - INFO - ALLOWED_USER_ID: 995298741
+2025-04-26 21:32:26,908 - INFO - DEVICE_NAME: W11
+2025-04-26 21:32:29,083 - INFO - \u2705 W11 Bot is running...
+2025-04-26 21:32:29,773 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getMe "HTTP/1.1 200 OK"
+2025-04-26 21:32:29,978 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/deleteWebhook "HTTP/1.1 200 OK"
+2025-04-26 21:32:29,982 - INFO - Application started
+2025-04-26 21:32:40,854 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:32:51,082 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:33:01,255 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:33:11,437 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:33:21,614 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:33:31,783 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:33:41,967 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:33:52,199 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:34:02,370 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:34:12,652 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:34:22,869 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:34:33,040 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:34:43,330 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:34:53,513 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:35:03,711 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:35:13,899 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:35:24,077 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:35:35,135 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:35:45,307 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:35:55,537 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:36:39,398 - INFO - \u2705 W11 Bot is running...
+2025-04-26 21:36:40,873 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getMe "HTTP/1.1 200 OK"
+2025-04-26 21:36:41,080 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/deleteWebhook "HTTP/1.1 200 OK"
+2025-04-26 21:36:41,083 - INFO - Application started
+2025-04-26 21:36:57,259 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:37:07,433 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:37:17,612 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:37:27,789 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:37:38,000 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:37:48,335 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:37:58,579 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:38:08,821 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:38:19,113 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:38:29,300 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:38:40,641 - INFO - \u2705 W11 Bot is running...
+2025-04-26 21:38:41,282 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getMe "HTTP/1.1 200 OK"
+2025-04-26 21:38:41,485 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/deleteWebhook "HTTP/1.1 200 OK"
+2025-04-26 21:38:41,486 - INFO - Application started
+2025-04-26 21:38:52,240 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:39:02,580 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:39:13,539 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:39:23,879 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:39:34,120 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:39:44,618 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:39:54,810 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:40:05,034 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:40:15,285 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:40:25,455 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:40:35,864 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:40:46,108 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:40:56,478 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:41:07,319 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:41:17,543 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:41:27,709 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:41:37,910 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:41:48,166 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:41:58,338 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:42:08,620 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:42:18,881 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:42:29,122 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:42:39,552 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:42:49,828 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:43:00,118 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:43:10,388 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:43:20,733 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:43:24,929 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:43:24,933 - INFO - \U0001f539 Nir0 (995298741) used /status
+2025-04-26 21:43:26,056 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 21:43:28,859 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:43:28,862 - INFO - \U0001f539 Nir0 (995298741) used /lock []
+2025-04-26 21:43:29,227 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 21:43:39,065 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:43:49,299 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:43:59,606 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:44:09,882 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:44:20,048 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:44:30,313 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:44:40,501 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:44:50,742 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:45:00,982 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:45:11,221 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:45:21,405 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:45:31,597 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:45:41,838 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:45:52,042 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:46:02,261 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:46:12,455 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:46:22,730 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:46:32,940 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:46:43,174 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:47:40,214 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:56:48,558 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:56:48,572 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 21:56:49,576 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 21:56:51,067 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 21:57:03,928 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:57:14,191 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:57:24,511 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:57:34,851 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:57:45,092 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:57:55,373 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:58:05,553 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:58:15,811 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:58:26,059 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:58:36,291 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:58:46,637 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:58:56,976 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:59:07,218 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:59:17,527 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:59:27,800 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:59:37,970 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:59:48,177 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:59:54,397 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 21:59:54,400 - INFO - \U0001f539 Nir0 (995298741) used /screenshot []
+2025-04-26 21:59:54,400 - INFO - Taking screenshot...
+2025-04-26 21:59:58,128 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendPhoto "HTTP/1.1 200 OK"
+2025-04-26 21:59:58,129 - INFO - Screenshot sent successfully
+2025-04-26 22:00:05,493 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:00:15,824 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:00:26,064 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:00:30,059 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:00:30,062 - INFO - \U0001f539 Nir0 (995298741) used /whoami []
+2025-04-26 22:00:30,921 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 22:00:37,381 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:00:37,383 - INFO - \U0001f539 Nir0 (995298741) used /camera []
+2025-04-26 22:00:38,719 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 22:00:46,855 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendPhoto "HTTP/1.1 200 OK"
+2025-04-26 22:00:47,671 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:00:57,889 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:01:08,082 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:01:18,288 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:01:28,528 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:01:38,822 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:01:49,009 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:01:59,250 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:02:09,469 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:02:19,728 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:02:29,977 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:02:40,252 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:02:50,453 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:03:00,688 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:03:10,931 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:03:21,168 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:10:22,085 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 22:10:23,094 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 22:10:24,611 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 22:10:26,874 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 22:13:25,406 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:13:35,674 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:13:45,915 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:13:56,154 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:14:06,345 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:14:16,532 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:14:26,699 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:14:36,912 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:14:47,252 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:14:57,494 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:15:07,837 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:15:18,202 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:15:28,666 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:15:38,966 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:15:49,203 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:15:59,388 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:16:09,684 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:24:07,045 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 22:24:08,061 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 22:24:09,575 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 22:24:11,823 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 22:26:25,724 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:26:36,121 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:31:26,952 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:31:26,971 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 22:31:27,980 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 22:31:29,474 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 22:31:31,742 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 22:33:22,188 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 69, in map_httpcore_exceptions
+    yield
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 373, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 216, in handle_async_request
+    raise exc from None
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection_pool.py", line 196, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 99, in handle_async_request
+    raise exc
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 76, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_async\connection.py", line 122, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\auto.py", line 30, in connect_tcp
+    return await self._backend.connect_tcp(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_backends\anyio.py", line 114, in connect_tcp
+    with map_exceptions(exc_map):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 277, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 372, in handle_async_request
+    with map_httpcore_exceptions():
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_transports\default.py", line 86, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 115, in network_retry_loop
+    if not await do_action():
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 108, in do_action
+    return action_cb_task.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_updater.py", line 335, in polling_action_cb
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 658, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 4593, in get_updates
+    await self._post(
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 691, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\ext\_extbot.py", line 362, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\_bot.py", line 720, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 197, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_baserequest.py", line 304, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\telegram\request\_httpxrequest.py", line 301, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2025-04-26 22:33:37,762 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:33:47,994 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:33:58,234 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:34:09,292 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:34:19,449 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:34:29,674 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:34:39,910 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:34:50,255 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:35:00,601 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:35:10,824 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:35:21,020 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:35:31,228 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:35:41,453 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:35:51,693 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:36:01,957 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:36:12,161 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:36:22,413 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:36:32,809 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:36:42,995 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:36:53,359 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:37:03,537 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:37:13,715 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:37:23,956 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:37:34,454 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:37:40,414 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:37:40,416 - INFO - \U0001f539 Nir0 (995298741) used /camera []
+2025-04-26 22:37:41,569 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 22:37:48,430 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendPhoto "HTTP/1.1 200 OK"
+2025-04-26 22:37:50,682 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:38:00,922 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:38:11,163 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:38:14,234 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:38:14,235 - INFO - \U0001f539 Nir0 (995298741) used /say ['Hello', 'World']
+2025-04-26 22:38:14,387 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\varad\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-04-26 22:38:14,387 - INFO - Using writeable comtypes cache directory: 'C:\Users\varad\AppData\Local\Programs\Python\Python311\Lib\site-packages\comtypes\gen'
+2025-04-26 22:38:17,862 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 22:58:18,276 - INFO - \u2705 W11 Bot is running...
+2025-04-26 22:58:18,992 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getMe "HTTP/1.1 200 OK"
+2025-04-26 22:58:19,179 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/deleteWebhook "HTTP/1.1 200 OK"
+2025-04-26 22:58:19,181 - INFO - Application started
+2025-04-26 22:58:29,828 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:58:40,068 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:58:41,707 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:58:41,709 - INFO - \U0001f539 Nir0 (995298741) used /status
+2025-04-26 22:58:42,525 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 22:58:47,954 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:58:47,956 - INFO - \U0001f539 Nir0 (995298741) used /screenshot []
+2025-04-26 22:58:47,957 - INFO - Taking screenshot...
+2025-04-26 22:58:51,438 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendPhoto "HTTP/1.1 200 OK"
+2025-04-26 22:58:51,440 - INFO - Screenshot sent successfully
+2025-04-26 22:58:56,759 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:58:56,761 - INFO - \U0001f539 Nir0 (995298741) used /camera []
+2025-04-26 22:58:57,476 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 22:59:07,749 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:59:10,878 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendPhoto "HTTP/1.1 200 OK"
+2025-04-26 22:59:18,214 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:59:28,401 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:59:38,641 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:59:40,510 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 22:59:40,512 - INFO - \U0001f539 Nir0 (995298741) used /lock []
+2025-04-26 22:59:41,526 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/sendMessage "HTTP/1.1 200 OK"
+2025-04-26 22:59:50,724 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
+2025-04-26 23:00:00,963 - INFO - HTTP Request: POST https://api.telegram.org/bot7321055256:AAHHLPOYdrEoXqCUE6y5VC___NH8Bjg80to/getUpdates "HTTP/1.1 200 OK"
