@@ -62,9 +62,9 @@ Example (Linux):
 
 ```bash
 cd linux
-echo "BOT_TOKEN=your_bot_token_here" > .env.arch
-echo "ALLOWED_USER_ID=your_telegram_user_id_here" >> .env.arch
-echo "DEVICE_NAME=MyLinuxPC" >> .env.arch
+echo "BOT_TOKEN=your_bot_token_here" > .env.linux
+echo "ALLOWED_USER_ID=your_telegram_user_id_here" >> .env.linux
+echo "DEVICE_NAME=MyLinuxPC" >> .env.linux
 ```
 
 ### 3. Platform-Specific Setup
