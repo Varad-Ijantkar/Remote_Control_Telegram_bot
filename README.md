@@ -29,7 +29,7 @@ ControlMyPC is a Telegram bot that allows you to remotely control your PC using 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/ControlMyPC.git
+git clone https://github.com/Varad-Ijantkar/ControlMyPC.git
 cd ControlMyPC
 ```
 
