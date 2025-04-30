@@ -13,14 +13,6 @@ from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-
-def safe_print(*args, **kwargs):
-    try:
-        print(*args, **kwargs)
-    except Exception as e:
-        logging.warning(f"safe_print failed: {e}")
-
-
 # Set up logging with console output
 logging.basicConfig(
     filename=os.path.join(
@@ -42,10 +34,10 @@ console_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s
 console_handler.setFormatter(console_formatter)
 logging.getLogger().addHandler(console_handler)
 
-safe_print("Logger initialized.")
+print("Logger initialized.")
 
 # Reduce initial delay for testing
-safe_print("Waiting for network...")
+print("Waiting for network...")
 time.sleep(5)  # Reduced from 30 for testing
 
 # Load .env file - Adjust path to be more generic
@@ -53,7 +45,7 @@ env_path = os.path.join(
     os.path.expanduser("~"), "daemon", "ControlMyPC", "Windows", ".env.w11"
 )
 if not os.path.exists(env_path):
-    safe_print(f"ERROR: Environment file not found at {env_path}")
+    print(f"ERROR: Environment file not found at {env_path}")
     sys.exit(1)
 
 load_dotenv(env_path)
@@ -66,17 +58,17 @@ DEVICE_NAME = os.getenv("DEVICE_NAME") or os.environ.get("COMPUTERNAME", "Unknow
 try:
     ALLOWED_USER_ID = int(ALLOWED_USER_ID_STR) if ALLOWED_USER_ID_STR else None
 except ValueError:
-    safe_print(f"ERROR: ALLOWED_USER_ID is not a valid integer: {ALLOWED_USER_ID_STR}")
+    print(f"ERROR: ALLOWED_USER_ID is not a valid integer: {ALLOWED_USER_ID_STR}")
     sys.exit(1)
 
 # Validate environment variables
 if not BOT_TOKEN:
-    safe_print("ERROR: BOT_TOKEN environment variable is missing or empty")
+    print("ERROR: BOT_TOKEN environment variable is missing or empty")
     logging.error("Missing BOT_TOKEN environment variable")
     sys.exit(1)
 
 if not ALLOWED_USER_ID:
-    safe_print("ERROR: ALLOWED_USER_ID environment variable is missing or invalid")
+    print("ERROR: ALLOWED_USER_ID environment variable is missing or invalid")
     logging.error("Missing or invalid ALLOWED_USER_ID environment variable")
     sys.exit(1)
 
@@ -259,6 +251,7 @@ async def camera_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         # Convert from BGR to RGB to fix the green tint issue
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
         filepath = os.path.join(tempfile.gettempdir(), "camera_image.png")
 
         # Save using OpenCV's imwrite with RGB conversion
@@ -288,10 +281,10 @@ async def shutdown_bot_command(update: Update, context: ContextTypes.DEFAULT_TYP
 
 if __name__ == "__main__":
     try:
-        safe_print("Building Telegram bot application...")
+        print("Building Telegram bot application...")
         app = ApplicationBuilder().token(BOT_TOKEN).build()
 
-        safe_print("Registering command handlers...")
+        print("Registering command handlers...")
         app.add_handler(CommandHandler("shutdown", shutdown_command))
         app.add_handler(CommandHandler("shutdown_in", shutdown_in_command))
         app.add_handler(CommandHandler("cancel_shutdown", cancel_shutdown_command))
@@ -304,20 +297,16 @@ if __name__ == "__main__":
         app.add_handler(CommandHandler("camera", camera_command))
         app.add_handler(CommandHandler("shutdown_bot", shutdown_bot_command))
 
-        # Replace Unicode characters with ASCII equivalents
-        safe_print(f"[OK] {DEVICE_NAME} Bot is starting up...")
-        logging.info(f"[OK] {DEVICE_NAME} Bot is running...")
+        print(f"✅ {DEVICE_NAME} Bot is starting up...")
+        logging.info(f"✅ {DEVICE_NAME} Bot is running...")
 
-        safe_print("Starting polling - bot is now online! Press Ctrl+C to stop.")
+        print("Starting polling - bot is now online! Press Ctrl+C to stop.")
         app.run_polling()
     except Exception as e:
         error_msg = f"Failed to start bot: {e}"
-        safe_print(f"ERROR: {error_msg}")
+        print(f"ERROR: {error_msg}")
         logging.error(error_msg)
         import traceback
 
-        # Use safe_print for traceback to avoid encoding issues
-        safe_print("Traceback:")
-        for line in traceback.format_exc().split("\n"):
-            safe_print(line)
+        print(traceback.format_exc())
         sys.exit(1)
