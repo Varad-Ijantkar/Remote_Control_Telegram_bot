@@ -3,3 +3,7 @@ Windows/RemoteDeactivation.log
 Windows/RemoteDeactivationWindows.bat
 Windows/startup_log.txt
 Windows/tempCodeRunnerFile.py
+Windows/.env.w11
+Windows/RemoteDeactivation.log
+Windows/error_log.txt
+*.log
