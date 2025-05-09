@@ -1,4 +1,4 @@
-# Remote System Control Telegram Bot
+# Remote Control Telegram Bot
 
 Remotely control your Linux (with a focus on Hyprland) and Windows systems via a secure Telegram bot. Perform actions like shutdown, restart, lock screen, take screenshots, get system status, and more.
 
