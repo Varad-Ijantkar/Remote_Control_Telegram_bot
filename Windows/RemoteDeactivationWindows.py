@@ -9,6 +9,12 @@ import cv2
 import sys
 import logging
 import ctypes
+import win32con
+import win32api
+import win32security
+import win32process
+import win32gui
+import win32ts
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
@@ -90,6 +96,72 @@ def log_command(command, user, args=""):
     logging.info(msg)
 
 
+# Improved lock function that works for system services
+def lock_workstation():
+    logging.info("Locking workstation using Windows API...")
+    try:
+        # Use Windows-specific lock command through user32.dll
+        ctypes.windll.user32.LockWorkStation()
+        return True
+    except Exception as e:
+        logging.error(f"Failed to lock using user32.dll: {e}")
+        
+        # Fallback to rundll32
+        try:
+            logging.info("Attempting fallback lock method...")
+            os.system("rundll32.exe user32.dll,LockWorkStation")
+            return True
+        except Exception as e2:
+            logging.error(f"Failed to lock using rundll32: {e2}")
+            return False
+
+
+# Function to capture screenshot that works in a service context
+def capture_screenshot():
+    logging.info("Taking screenshot using safer method for services...")
+    try:
+        # Try using a more robust screenshot method
+        with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp:
+            tmp_filepath = tmp.name
+        
+        # Ensure failsafe is disabled
+        pyautogui.FAILSAFE = False
+        
+        # Try to find an active session
+        session_id = win32ts.WTSGetActiveConsoleSessionId()
+        if session_id == 0xFFFFFFFF:
+            logging.warning("No active console session found")
+            return None
+            
+        # Take the screenshot using pyautogui but with additional error handling
+        try:
+            screenshot = pyautogui.screenshot()
+            screenshot.save(tmp_filepath)
+            return tmp_filepath
+        except Exception as e:
+            logging.error(f"pyautogui screenshot failed: {e}")
+            
+            # Fallback to using native Windows screenshot method
+            try:
+                logging.info("Attempting fallback screenshot method...")
+                os.system(f'powershell -command "Add-Type -AssemblyName System.Windows.Forms;'+
+                         f'[System.Windows.Forms.SendKeys]::SendWait(\'%{{PRTSC}}\');'+
+                         f'$image = [System.Windows.Forms.Clipboard]::GetImage();'+
+                         f'$image.Save(\'{tmp_filepath}\')"')
+                
+                if os.path.exists(tmp_filepath) and os.path.getsize(tmp_filepath) > 0:
+                    return tmp_filepath
+                else:
+                    raise Exception("Fallback screenshot is empty or failed")
+            except Exception as e2:
+                logging.error(f"Fallback screenshot failed: {e2}")
+                return None
+                
+    except Exception as e:
+        logging.error(f"Screenshot capture error: {e}")
+        return None
+
+
 async def shutdown_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     log_command("shutdown", update.effective_user, context.args)
     if not is_authorized(update.effective_user.id):
@@ -137,13 +209,12 @@ async def lock_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not is_authorized(update.effective_user.id):
         await update.message.reply_text("❌ Unauthorized user.")
         return
-    try:
-        await update.message.reply_text(f"{DEVICE_NAME}: Locking now... 🔒")
-        # Windows-specific lock command
-        ctypes.windll.user32.LockWorkStation()
-    except Exception as e:
-        logging.error(f"Lock command failed: {e}")
-        await update.message.reply_text(f"❌ Lock failed: {str(e)}")
+    
+    await update.message.reply_text(f"{DEVICE_NAME}: Locking now... 🔒")
+    success = lock_workstation()
+    
+    if not success:
+        await update.message.reply_text("❌ Lock failed. Please check the logs.")
 
 
 async def status_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -172,29 +243,33 @@ async def screenshot_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
     if not is_authorized(update.effective_user.id):
         await update.message.reply_text("❌ Unauthorized user.")
         return
+    
+    await update.message.reply_text(f"{DEVICE_NAME}: Taking screenshot...")
+    
     try:
-        logging.info("Taking screenshot...")
-        with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp:
-            tmp_filepath = tmp.name
-
-            # Fix for the screenshot - ensure pyautogui works properly
-            pyautogui.FAILSAFE = False
-            # Wait a moment before taking screenshot to ensure everything is ready
-            time.sleep(0.5)
-            screenshot = pyautogui.screenshot()
-            screenshot.save(tmp_filepath)
-
-            with open(tmp_filepath, "rb") as photo:
-                await context.bot.send_photo(
-                    chat_id=update.effective_chat.id, photo=photo
-                )
+        # Use our improved screenshot function
+        tmp_filepath = capture_screenshot()
+        
+        if not tmp_filepath:
+            await update.message.reply_text("❌ Failed to capture screenshot")
+            return
+            
+        # Send the screenshot
+        with open(tmp_filepath, "rb") as photo:
+            await context.bot.send_photo(
+                chat_id=update.effective_chat.id, photo=photo
+            )
         logging.info("Screenshot sent successfully")
+        
     except Exception as e:
         logging.error(f"Screenshot failed: {e}")
         await update.message.reply_text(f"❌ Screenshot failed: {str(e)}")
     finally:
         if "tmp_filepath" in locals() and os.path.exists(tmp_filepath):
-            os.remove(tmp_filepath)
+            try:
+                os.remove(tmp_filepath)
+            except:
+                pass
 
 
 async def whoami_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -203,7 +278,12 @@ async def whoami_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("❌ Unauthorized user.")
         return
     username = getpass.getuser()
-    await update.message.reply_text(f"👤 Username: {username} on {DEVICE_NAME}")
+    session_id = win32ts.WTSGetActiveConsoleSessionId()
+    await update.message.reply_text(
+        f"👤 Username: {username} on {DEVICE_NAME}\n"
+        f"Active session ID: {session_id}\n"
+        f"Running as service: {'Yes' if session_id == 0 else 'No'}"
+    )
 
 
 async def say_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -233,7 +313,18 @@ async def say_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(f"{DEVICE_NAME}: 📢 {message}")
     except Exception as e:
         logging.error(f"Speech failed: {e}")
-        await update.message.reply_text(f"❌ Failed to speak: {str(e)}")
+        
+        # Fallback to using PowerShell for speech
+        try:
+            logging.info("Attempting fallback speech method...")
+            escaped_message = message.replace('"', '\\"')
+            os.system(f'powershell -command "Add-Type -AssemblyName System.Speech; ' +
+                     f'$speak = New-Object System.Speech.Synthesis.SpeechSynthesizer; ' +
+                     f'$speak.Speak(\\"{escaped_message}\\")"')
+            await update.message.reply_text(f"{DEVICE_NAME}: 📢 {message} (fallback method)")
+        except Exception as e2:
+            logging.error(f"Fallback speech failed: {e2}")
+            await update.message.reply_text(f"❌ Failed to speak: {str(e)}")
 
 
 async def camera_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -251,11 +342,21 @@ async def camera_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
-        ret, frame = cap.read()
+        # Try multiple times to get a frame (cameras can be slow to start)
+        max_attempts = 5
+        attempt = 0
+        ret = False
+        
+        while not ret and attempt < max_attempts:
+            ret, frame = cap.read()
+            if not ret:
+                attempt += 1
+                time.sleep(0.5)  # Wait a bit between attempts
+        
         cap.release()
 
         if not ret:
-            raise Exception("Failed to capture image from camera")
+            raise Exception("Failed to capture image from camera after multiple attempts")
 
         # Convert from BGR to RGB to fix the green tint issue
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
@@ -269,10 +370,41 @@ async def camera_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     except Exception as e:
         logging.error(f"Camera command failed: {e}")
-        await update.message.reply_text(f"❌ Failed to capture image: {str(e)}")
+        
+        # Try fallback method using PowerShell and Windows Camera app
+        try:
+            logging.info("Attempting fallback camera method...")
+            temp_dir = tempfile.gettempdir()
+            filepath = os.path.join(temp_dir, "camera_fallback.jpg")
+            
+            # This is a complex approach that might not work in all environments
+            # but worth trying as a fallback
+            powershell_cmd = (
+                f'powershell -command "'
+                f'Add-Type -AssemblyName System.Windows.Forms; '
+                f'[Windows.Media.Capture.CameraCaptureUI, Windows.Media.Capture, ContentType=WindowsRuntime] | Out-Null; '
+                f'$captureUI = New-Object Windows.Media.Capture.CameraCaptureUI; '
+                f'$captureUI.PhotoSettings.Format = [Windows.Media.Capture.CameraCaptureUIPhotoFormat]::Jpeg; '
+                f'$file = $captureUI.CaptureFileAsync([Windows.Media.Capture.CameraCaptureUIMode]::Photo).GetAwaiter().GetResult(); '
+                f'if ($file) {{ Copy-Item $file.Path \'{filepath}\' -Force }}"'
+            )
+            
+            os.system(powershell_cmd)
+            
+            if os.path.exists(filepath) and os.path.getsize(filepath) > 0:
+                with open(filepath, "rb") as photo:
+                    await context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo)
+            else:
+                await update.message.reply_text("❌ Failed to capture image: Camera not available")
+        except Exception as e2:
+            logging.error(f"Fallback camera failed: {e2}")
+            await update.message.reply_text(f"❌ Failed to capture image: {str(e)}")
     finally:
         if "filepath" in locals() and os.path.exists(filepath):
-            os.remove(filepath)
+            try:
+                os.remove(filepath)
+            except:
+                pass
 
 
 async def shutdown_bot_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
